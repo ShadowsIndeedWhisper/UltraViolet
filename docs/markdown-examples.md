@@ -1,85 +1,47 @@
-# Installation
+# UltraVoilet UI Library Setup
 
-This page demonstrates some of the built-in markdown extensions provided by VitePress.
+UltraVoilet is a powerful UI library for Roblox based on the principles of React and Redux. Before you start, it is recommended that you have a basic understanding of Luau/Lua programming language.
 
-## Syntax Highlighting
+## Prerequisites
 
-VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shikijs/shiki), with additional features like line-highlighting:
+Make sure you have Lua or Luau scripting knowledge before attempting to use UltraVoilet. If you're new to Lua, consider learning the basics before diving into the library.
 
-**Input**
+## Installation
 
-````md
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
-```
-````
+Follow these steps to install UltraVoilet:
 
-**Output**
+1. **Download the Module:**
+   - Visit the [UltraVoilet GitHub repository](https://github.com/UltraVoilet/UltraVoilet).
+   - Click on the "Code" button and select "Download ZIP" to download the library as a zip file.
+   - Extract the contents of the zip file to a location of your choice.
 
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
-```
+2. **Integrate with Your Project:**
+   - Open Roblox Studio and navigate to the Explorer window.
+   - Right-click on "ServerScriptService" or "StarterPlayer" (or any other suitable location for your project) and choose "Insert Object."
+   - Select "ModuleScript" and name it "UltraVoilet."
 
-## Custom Containers
+3. **Copy Library Files:**
+   - Copy the contents of the extracted UltraVoilet folder into the "UltraVoilet" ModuleScript you created.
 
-**Input**
+## Usage
 
-```md
-::: info
-This is an info box.
-:::
+Now that UltraVoilet is integrated into your project, you can start building user interfaces using its React-like components and Redux state management.
 
-::: tip
-This is a tip.
-:::
+```lua
+-- Example usage of UltraVoilet components
+local Roact = require(game.ReplicatedStorage.UltraVoilet.Roact)
+local UltraVoilet = require(game.ReplicatedStorage.UltraVoilet.UltraVoilet)
 
-::: warning
-This is a warning.
-:::
+-- Define a simple component
+local MyComponent = Roact.Component:extend("MyComponent")
 
-::: danger
-This is a dangerous warning.
-:::
+function MyComponent:render()
+    return UltraVoilet.createElement("TextLabel", {
+        Text = "Hello, UltraVoilet!",
+        Size = UDim2.new(0, 200, 0, 50),
+    })
+end
 
-::: details
-This is a details block.
-:::
-```
-
-**Output**
-
-::: info
-This is an info box.
-:::
-
-::: tip
-This is a tip.
-:::
-
-::: warning
-This is a warning.
-:::
-
-::: danger
-This is a dangerous warning.
-:::
-
-::: details
-This is a details block.
-:::
-
-## More
-
-Check out the documentation for the [full list of markdown extensions](https://vitepress.dev/guide/markdown).
+-- Mount the component to the player's PlayerGui
+local myElement = UltraVoilet.createElement(MyComponent)
+Roact.mount(myElement, game.Players.LocalPlayer.PlayerGui)
