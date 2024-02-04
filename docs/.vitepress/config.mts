@@ -8,21 +8,47 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Documentation', link: '/setup' }
     ],
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'Basic Setup',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'Setup', link: '/setup' },
+          { text: 'Elements', link: '/elements' }
+        ]
+      },
+
+      {
+        text: 'Elements',
+        items: [
+          { text: 'Events', link: '/events' },
+          { text: 'Animations', link: '/animations' }
+        ]
+      },
+
+      {
+        text: 'Components',
+        items: [
+          { text: 'Components', link: '/components' },
+          { text: 'States', link: '/states' },
+        ]
+      },
+
+      {
+        text: 'Advanced',
+        items: [
+          { text: 'Warning', link: '/advanced/advanced'},
+          { text: 'Setup Configuration', link: '/advanced/setupConfig' },
+          { text: 'Fragments', link: '/advanced/fragments' },
+          { text: 'API', link: '/advanced/api' },
         ]
       }
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/ShadowsIndeedWhisper/UltraViolet-UI' }
     ]
   }
 })
